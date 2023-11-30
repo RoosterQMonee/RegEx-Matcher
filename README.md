@@ -1,6 +1,8 @@
 # RegEx-Matcher
 
-A small extension for Replit and Chrome to help quickly test / debug RegEx patterns :)
+A small extension for Replit and Chrome to help quickly test / debug RegEx patterns!
+
+It's very simple, but it works quite well :)
 
 ## Features
 
