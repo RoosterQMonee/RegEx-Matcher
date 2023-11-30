@@ -1,0 +1,38 @@
+{
+  "name": "RegEx Matcher v2.0",
+  "description": "Easily test RegEx patterns :)",
+  "tools": [
+    {
+      "name": "RegEx Matcher",
+      "icon": "/replit.svg",
+      "handler": "/"
+    }
+  ],
+  "background": {
+    "page": "background.html"
+  },
+  "icon": "/regex.png",
+  scopes: [],
+  features: [
+
+    {
+      title: "RegEx highlighting",
+      body: "Shows all matching patterns for RegEx expressions",
+      image: "images/RegEx-Dev-Replit-highlight.png"
+    },
+
+    {
+    title: "Pattern Debugging",
+    body: "Automatically shows issues within a RegEx Pattern",
+    image: null
+  },
+
+    {
+    title: "Pattern Explanation",
+    body: "Automatically break down a pattern and explain what each character does.",
+    image: null
+  }
+
+  ],
+  longDescription: "A simple, easy to use extension that lets you quickly test RegEx patterns on chunks of text and see how they work."
+}

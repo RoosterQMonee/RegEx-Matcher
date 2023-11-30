@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RegEx Matcher</title>
+  
+  <link href="static/css/style.css" rel="stylesheet" type="text/css" />
+  <link href="static/css/text-highlighter.css" rel="stylesheet"/>
+  <script src="static/js/text-highlighter.js"></script>
+</head>
+<body spellcheck="false">
+  <div id="container">
+    <div class="row mt-5">
+      <div class="col">
+        <h1>Regex Matcher</h1>
+        
+        <div class="form-group">
+          <label for="regex-input">Regular Expression:</label>
+          <br>
+          <input type="text" id="regex-input" class="form-control" placeholder="RegEx, e.g: (?<=\?q=)(.*)"/>
+          <br>
+          <div id="regex-error" class="error"></div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="form-group">
+          <label for="text-input">Text:</label>
+          
+          <br>
+          
+          <textarea id="backdrop" class="backdrop">
+abcdefghijklmnopqrstuvwxyz
+0123456789
++-*/=!@#$%^&*()\|[]{}:;"'<>,.?
+https://youtube.com/?q=how+to+use+regex
+          </textarea>
+
+          <button id="prev">< Previous</button>
+          <button id="next">Next ></button>
+
+          <select id="sens">
+              <option value="">Case Insensitive</option>
+              <option value="1">Case Sensitive</option>
+          </select>
+          
+          <select id="word">
+              <option value="">All Characters</option>
+              <option value="1">Words Only</option>
+          </select> 
+        </div>
+      </div>
+      
+      <div class="col-3">
+        <div class="panel" id="matches-panel"></div>
+        <div class="panel" id="explanation-panel"></div>
+      </div>
+    </div>
+  </div>
+
+  <p>Credits to <a href="https://github.com/wstaeblein">wstaeblein</a> for the highlighting library!</p>
+
+  <script src="static/js/script.js"></script>
+</body>
+</html>
