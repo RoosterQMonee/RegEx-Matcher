@@ -27,7 +27,7 @@ function matchText() {
         }
         else
         {
-            textInput.innerHTML = textContent;
+            document.getElementById("backdrop").value = textInput;
             explanationPanel.innerHTML = "";
         }
     }
