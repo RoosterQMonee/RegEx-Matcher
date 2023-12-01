@@ -1,41 +1,39 @@
-const regexInput = document.getElementById("regex-input");
-const textInput = document.getElementById("backdrop");
-const matchesPanel = document.getElementById("matches-panel");
-const regexError = document.getElementById("regex-error");
-const explanationPanel = document.getElementById("explanation-panel");
+var regexInput = document.getElementById("regex-input");
+var textInput = document.getElementById("backdrop");
+var matchesPanel = document.getElementById("matches-panel");
+var regexError = document.getElementById("regex-error");
+var explanationPanel = document.getElementById("explanation-panel");
 
 
 let hilite = new textHighlight(textInput);
 
 
 function matchText() {
+    var regexInput = document.getElementById("regex-input").value;
+    var textInput = document.getElementById("backdrop").value;
+    var matchesPanel = document.getElementById("matches-panel");
+    var regexError = document.getElementById("regex-error");
+    var explanationPanel = document.getElementById("explanation-panel");
+
     matchesPanel.innerHTML = "";
     regexError.innerHTML = "";
 
-    try
-    {
-        const regex = new RegExp(regexInput.value, 'g');
-        const textContent = textInput.textContent;
+    try {
+        var regex = new RegExp(regexInput, 'g');
+        var match = textInput.match(regex);
 
-        const match = textContent.match(regex);
-
-        if (match)
-        {
+        if (match) {
             hilite.clear();
-          
             displayExplanation(regex, match, explanationPanel);
-        }
-        else
-        {
-            textInput.innerHTML = textContent;
+        } else {
+            document.getElementById("backdrop").value = textInput;
             explanationPanel.innerHTML = "";
         }
-    }
-    catch (error)
-    {
+    } catch (error) {
         regexError.innerHTML = error.message;
     }
 }
+
 
 
 
@@ -52,7 +50,7 @@ function setHighlightedText(highlightedText) {
 
 
 function displayExplanation(regex, match, explanationPanel) {
-    const explanation = [];
+    var explanation = [];
     let sens = document.getElementById('sens').value; 
     let word = document.getElementById('word').value; 
 
@@ -62,7 +60,7 @@ function displayExplanation(regex, match, explanationPanel) {
 
     explanation.push(`<br>`);
 
-    const patternChars = Array.from(new Set(regex.source.split('')));
+    var patternChars = Array.from(new Set(regex.source.split('')));
   
     patternChars.forEach(char => {
         switch (char) {
